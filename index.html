@@ -3,24 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foto Tampilan</title>
+  <title>Tampil Foto</title>
   <style>
     body {
       margin: 0;
       background: black;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: white;
     }
     img {
       max-width: 100%;
-      max-height: 100vh;
+      max-height: 80vh;
       object-fit: contain;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    input {
+      margin: 10px;
     }
   </style>
 </head>
 <body>
-  <img src="https://files.catbox.moe/w0w43n.png" alt="Tampilan Foto">
+  <h2>Upload Foto</h2>
+  <input type="file" accept="image/*" onchange="previewImage(event)">
+  <img id="preview" src="" alt="Foto akan tampil di sini">
+  
+  <script>
+    function previewImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("preview").src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
 </body>
 </html>
