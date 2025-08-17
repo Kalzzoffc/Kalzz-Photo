@@ -6,20 +6,44 @@
   <style>
     body {
       margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .viewer {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: #000;
+      min-height: 90vh;
     }
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+
+    .viewer img {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    .footer {
+      padding: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    a {
+      color: #4da6ff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <img src="Ice-kalzz-Photo.png" alt="Foto">
+  <div class="viewer">
+    <img src="Ice-kalzz-Photo.png" alt="Photo Viewer">
+  </div>
+  <div class="footer">
+    © Kalzz Official 
+  </div>
 </body>
 </html>
